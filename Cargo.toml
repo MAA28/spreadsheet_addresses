@@ -1,10 +1,9 @@
 [package]
 name = "spreadsheet_addresses"
-version = "1.0.2"
+version = "1.0.3"
 edition = "2021"
 author = "Malte Aschenbach <malteaschenbach@gmail.com>"
 description = "Convert spreadsheet addresses (\"A4\", \"B$7\" and so on) to a struct and vice versa!"
-docs = "https://docs.rs/spreadsheet_addresses"
 repository = "https://github.com/MAA28/spreadsheet_addresses"
 keyword = ["spreadsheet", "CAS", "database", "table"]
 categories = ["parsing"]
