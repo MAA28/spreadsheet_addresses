@@ -1,6 +1,6 @@
 [package]
 name = "spreadsheet_addresses"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2021"
 author = "Malte Aschenbach <malteaschenbach@gmail.com>"
 description = "Convert spreadsheet addresses (\"A4\", \"B$7\" and so on) to a struct and vice versa!"
