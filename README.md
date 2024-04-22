@@ -1,7 +1,7 @@
 # Spreadsheet addresses
-[<img alt="github" src="https://img.shields.io/badge/github--MAA28-Signed--Distance--Fields?style=for-the-badge&labelColor=555555&logo=github" height="20">](https://github.com/MAA28/spreadsheet_addresses)
-[<img alt="crates.io" src="https://img.shields.io/crates/v/signed_distance_field?style=for-the-badge&color=fc8d62&logo=rust" height="20">](https://crates.io/crates/spreadsheet_addresses)
-[<img alt="docs.rs" src="https://img.shields.io/badge/docs.rs-Signed--Distance--Field-b84a6e1?style=for-the-badge&labelColor=555555&logo=docs.rs" height="20">](https://docs.rs/crate/spreadsheet_addresses/latest)
+[<img alt="github" src="https://img.shields.io/badge/github-Spreadsheet-Addresses?style=for-the-badge&labelColor=555555&logo=github" height="20">](https://github.com/MAA28/spreadsheet_addresses)
+[<img alt="crates.io" src="https://img.shields.io/crates/v/spreadsheet_addresses?style=for-the-badge&color=fc8d62&logo=rust" height="20">](https://crates.io/crates/spreadsheet_addresses)
+[<img alt="docs.rs" src="https://img.shields.io/badge/docs.rs-Spreadsheet-Addresses?style=for-the-badge&labelColor=555555&logo=docs.rs" height="20">](https://docs.rs/crate/spreadsheet_addresses/latest)
 
 > Convert spreadsheet addresses to coordinates and vice versa in a fully tested and documented way!
 

@@ -9,6 +9,7 @@ repository = "https://github.com/MAA28/spreadsheet_addresses"
 keyword = ["spreadsheet", "CAS", "database", "table"]
 categories = ["parsing"]
 license = "MIT OR Apache-2.0"
+readme = "README.md"
 
 
 [dependencies]
