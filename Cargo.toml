@@ -1,12 +1,15 @@
 [package]
 name = "spreadsheet_addresses"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
+author = "Malte Aschenbach <malteaschenbach@gmail.com>"
+description = "Convert spreadsheet addresses (\"A4\", \"B$7\" and so on) to a struct and vice versa!"
+docs = "https://docs.rs/spreadsheet_addresses"
+repository = "https://github.com/MAA28/spreadsheet_addresses"
+keyword = ["spreadsheet", "CAS", "database", "table"]
+categories = ["parsing"]
+license = "MIT OR Apache-2.0"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 nom = "7.1.3"
-
-[dev-dependencies]
-rand_simple = "0.2.27"

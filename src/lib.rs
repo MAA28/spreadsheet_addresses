@@ -1,3 +1,4 @@
+#[warn(missing_docs)]
 use std::str::from_utf8;
 
 use nom::{
@@ -13,13 +14,31 @@ mod tests;
 #[derive(Debug, PartialEq)]
 /// This struct encodes an spreadsheet address.
 pub struct Coordinate {
-    pub relative_row: bool,
-    pub relative_column: bool,
     pub row: u32,
     pub column: u32,
+    pub relative_row: bool,
+    pub relative_column: bool,
 }
 
 impl Coordinate {
+    /// Constructs acoordinate struct
+    ///
+    /// # Example
+    /// ```rust
+    /// use spreadsheet_addresses::Coordinate;
+    ///
+    /// let coordinate = Coordinate::new(16, 2, true, false);
+    ///
+    /// assert_eq!(
+    ///     coordinate,
+    ///     Coordinate {
+    ///         row: 16,
+    ///         column: 2,
+    ///         relative_row: true,
+    ///         relative_column: false,
+    ///     }
+    /// );
+    /// ```
     pub fn new(row: u32, column: u32, relative_row: bool, relative_column: bool) -> Coordinate {
         Coordinate {
             row,
@@ -53,6 +72,32 @@ impl Coordinate {
         ));
     }
 
+    /// Construct a coordinate struct from an address
+    ///
+    /// # Examples
+    /// ```rust
+    /// use spreadsheet_addresses::{Coordinate, AddressParsingError};
+    ///
+    /// let coordinate1 = Coordinate::from_address("$CV23");
+    /// let coordinate2 = Coordinate::from_address("Hello World");
+    ///
+    /// assert_eq!(
+    ///     coordinate1,
+    ///     Ok(Coordinate {
+    ///         row: 22,
+    ///         column: 99,
+    ///         relative_row: true,
+    ///         relative_column: false,
+    ///     })
+    /// );
+    ///
+    /// assert_eq!(
+    ///     coordinate2,
+    ///     Err(AddressParsingError {
+    ///         input: "Hello World".to_string()
+    ///     })
+    /// );
+    /// ```
     pub fn from_address(address: &str) -> Result<Coordinate, AddressParsingError> {
         let (_, (absolute_character_1, letgits, absolute_character_2, numbers)) =
             Coordinate::parse(address.as_bytes()).map_err(|_| AddressParsingError {
@@ -83,11 +128,26 @@ impl Coordinate {
         return Ok(Coordinate::new(
             row as u32,
             column as u32,
-            !absolute_character_1,
             !absolute_character_2,
+            !absolute_character_1,
         ));
     }
 
+    /// Outputs an address from the coordinate
+    ///
+    /// # Examples
+    /// ```rust
+    /// use spreadsheet_addresses::Coordinate;
+    ///
+    /// let coordinate = Coordinate::new(22, 99, true, false);
+    ///
+    /// let address = coordinate.to_address();
+    ///
+    /// assert_eq!(
+    ///     address,
+    ///     "$CV23".to_string()
+    /// );
+    /// ```
     pub fn to_address(&self) -> String {
         let mut letgits = String::new();
 
@@ -111,7 +171,7 @@ impl Coordinate {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 /// The passed input is impossible to parse as an address.
 pub struct AddressParsingError {
     /// This input can not be parsed as an address.

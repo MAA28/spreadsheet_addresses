@@ -25,15 +25,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "rand_simple"
-version = "0.2.27"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2a202604646aa5913168cdae1afdc72efac53312b7d363de0cc27680e114a47a"
-
-[[package]]
 name = "spreadsheet_addresses"
-version = "0.1.0"
+version = "1.0.0"
 dependencies = [
  "nom",
- "rand_simple",
 ]
